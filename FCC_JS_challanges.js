@@ -18,3 +18,19 @@ function destroyer(arr) {
   return fltd;
 }
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+*****251*******************************
+*****Where do I belong*****************
+
+
+function getIndexToIns(arr, num) {
+  var ordArr = arr.sort(compare);
+  var idx = 0;
+  while(ordArr[idx]< num){
+      idx++;
+  }
+  return idx;
+}
+function compare(a,b){
+  if(a>b){return 1;}
+}
