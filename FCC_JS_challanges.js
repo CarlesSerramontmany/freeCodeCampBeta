@@ -33,6 +33,35 @@ function getIndexToIns(arr, num) {
   }
   return idx;
 }
-
-
 getIndexToIns([40, 60], 50);
+
+
+*****251*******************************
+*****Caesars cipher********************
+
+function rot13(str) { // LBH QVQ VG! 65-90 || 65-77  *  78-90
+  var abc = "";
+  //console.log(abc.concat("ts"));
+  var letra = "";
+  var pos = 0;
+  for(var i = 0; i<str.length; i++){
+    pos = str.charCodeAt(i);
+    if(pos < 65 || pos > 90){
+      letra = String.fromCharCode(pos);
+      abc = abc.concat(letra);
+    }
+    if(pos >= 65 && pos <= 77){
+      letra = String.fromCharCode(pos+13);
+      abc = abc.concat(letra);
+    }
+    if(pos >=78 && pos <= 90){
+      letra = String.fromCharCode(pos-13);
+      abc = abc.concat(letra);
+    }
+  }
+  console.log(abc);
+  return abc;
+}    
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
