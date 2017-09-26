@@ -24,13 +24,15 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 
 function getIndexToIns(arr, num) {
-  var ordArr = arr.sort(compare);
+  arr.sort(function(a,b){
+      return a-b;
+    });
   var idx = 0;
-  while(ordArr[idx]< num){
+  while(arr[idx]< num){
       idx++;
   }
   return idx;
 }
-function compare(a,b){
-  if(a>b){return 1;}
-}
+
+
+getIndexToIns([40, 60], 50);
